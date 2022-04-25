@@ -8,13 +8,20 @@
     </head>
     <body id="body">
         <div id="buttons">
-            <button type="button" id="clear" class="button">Clear</button>
-            <button type="button" id="resize" class="button">Change size</button>
-            <input type="color" id="colorpicker" class="button" value="#ff0000">
-        </div>
-        <div id="popup">
-            <input type="number" id="newsize" class="button" value="16" min="1" max="100">
-            <button type="submit" id="ok" class="button">Ok</button>
+            <div id="mainrow">
+                <button type="button" id="clear" class="button">Clear</button>
+                <div id="resizeCont" class="button">
+                    <label id="resizelabel" for="resize">16X16</label><br>
+                    <input type="range" name="resize" id="resize" class="button" min="2" max="60" value="16"></button>
+                </div>
+                <input type="color" id="colorpicker" class="button" value="#ff0000">
+            </div>
+            <div id="toolsrow">
+                <button type="button" id="pencil" class="button"><img src="./img/pencil-svgrepo-com.svg" class="toolsiimg" draggable="false"></button>
+                <button type="button" id="rubber" class="button"><img src="./img/rubber-svgrepo-com.svg" class="toolsiimg" draggable="false"></button>
+                <button type="button" id="fill" class="button"><img src="./img/fill-svgrepo-com.svg" class="toolsiimg" draggable="false"></button>
+                <button type="button" id="rainbow" class="button"><img src="./img/rainbow-svgrepo-com.svg" class="toolsiimg" draggable="false"></button>
+            </div>
         </div>
     </body>
 </html>
