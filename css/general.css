@@ -20,8 +20,11 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
     width: 800px;
     height: 800px;
+
+    background-color: black;
     border: 2px black solid;
 }
 

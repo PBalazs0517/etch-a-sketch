@@ -68,19 +68,13 @@ const resizeLabel = document.getElementById("resizelabel");
         //fill
         let fill = document.getElementById("fill");
         fill.addEventListener("click", () => {
-            pencilSelected = false;
-            rubberSelected = false;
-            fillSelected = true;
-            rainbowSelected = false;
-            fill.style.cssText = "border: 3px rgb(29, 36, 248) solid;";
-            rubber.style.cssText = "border: 3px black solid;";
-            pencil.style.cssText = "border: 3px black solid;";
-            rainbow.style.cssText = "border: 3px black solid;";
+            fill.style.cssText += "border: 3px rgb(29, 36, 248) solid;";
             color = colorpicker.value;
             let cubes = document.querySelectorAll(".cubes");
             cubes.forEach(cube => {
                 cube.style.cssText += `background-color: ${color}`
             });
+            setTimeout(function(){fill.style.cssText -= "border: 3px rgb(29, 36, 248) solid;";}, 150)
         })
 
         //rainbow
@@ -112,7 +106,7 @@ let body = document.querySelector("body")
 //div where the grid goes
 let mainCont = document.createElement("div");
 mainCont.id = "mainCont";
-mainCont.style.cssText += `background-color: ${bgColor}`;
+mainCont.style.cssText += `background-color: black`;
 body.appendChild(mainCont);
 
 //cube's height and width
@@ -129,7 +123,7 @@ function createGrid() {
         cube.id = `cube${i}`;
         cube.classList.add("cubes");
         calcHW();
-        cube.style.cssText = `height: ${heightAndWidth}; width: ${heightAndWidth};`;
+        cube.style.cssText = `height: ${heightAndWidth}; width: ${heightAndWidth}; background-color: ${bgColor}`;
         cube.addEventListener("mouseover", e => {
             randomiseColor();
             if(rainbowSelected == true){
